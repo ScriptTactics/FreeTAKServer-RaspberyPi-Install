@@ -284,7 +284,7 @@ Once everything is configured click deploy at the top right.
 
 # Wireguard VPN
 
-To an extra layer of security to your server you can add a Wireguard VPN to allow encrypted tunnel access.
+To add an extra layer of security to your server you can add a Wireguard VPN to allow encrypted tunnel access.
 
 This guide will use PiVPN for it's ease of use and ability to quickly add clients.
 
@@ -322,7 +322,7 @@ pivpn -a
 ```
 
 
-$ UFW
+# UFW
 Once Wireguard is installed and you setup clients you will have to modify a few settings with FTS, FTS-UI & your firewall.
 
 
