@@ -16,7 +16,7 @@ Once that is installed, insert your micro sd into your computer and install Ubun
 
 Select Choose OS
 
-[General Purpose](screenshots/GeneralPurpose.PNG)
+![General Purpose](screenshots/GeneralPurpose.PNG)
 
 Select General Purpose
 
