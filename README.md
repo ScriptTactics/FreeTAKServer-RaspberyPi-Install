@@ -12,7 +12,7 @@ Next you will need the [Raspberry Pi Imager Software](https://www.raspberrypi.co
 Once that is installed, insert your micro sd into your computer and install Ubuntu from the Raspberry Pi Imager Software.
 
 ## Flash Operating System
-[Imager](screenshots/Imager.PNG)
+![Imager](screenshots/Imager.PNG)
 
 Select Choose OS
 
@@ -20,11 +20,11 @@ Select Choose OS
 
 Select General Purpose
 
-[Ubuntu](screenshots/Ubuntu.PNG)
+![Ubuntu](screenshots/Ubuntu.PNG)
 
 Select Ubuntu
 
-[Ubuntu Server LTS](screenshots/ubuntuServer.PNG)
+![Ubuntu Server LTS](screenshots/ubuntuServer.PNG)
 
 Select Ubuntu Server 20.04.3 LTS (64-Bit)
 
@@ -62,6 +62,8 @@ Next install python libraries
 
 ```
 sudo apt install python3-dev python3-setuptools build-essential python3-gevent python3-lxml libcairo2-dev
+```
+```
 sudo pip3 -m install wheel pycairo
 ```
 
@@ -255,11 +257,11 @@ Once you are on the page open a new tab and navigate to the [FreeTAKHub GitHub R
 
 Next you will want to import the flows.json into node-red.
 
-[Import](screenshots/Node-Red.PNG)
+![Import](screenshots/Node-Red.PNG)
 
 Select the flows.json and import into current flow.
 
-[Pallette](screenshots/managePallete.PNG)
+![Pallette](screenshots/managePallete.PNG)
 
 Next you will have to install the following dependencies.
  - node-red-dashboard
