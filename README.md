@@ -282,5 +282,52 @@ Once everything is configured click deploy at the top right.
 
 
 
+# Wireguard VPN
+
+To an extra layer of security to your server you can add a Wireguard VPN to allow encrypted tunnel access.
+
+This guide will use PiVPN for it's ease of use and ability to quickly add clients.
+
+## PiVPN Install
+
+Use this command to quickly install PiVPN and follow the prompts
+```
+curl -L https://install.pivpn.io | bash
+```
+
+Once installed you will need to change a few things.
+
+```
+sudo nano /opt/pivpn/wireguard/makeCONF.sh
+```
+
+Change
+
+This line:
+```
+AllowedIPS = "0.0.0.0/0, ::0/0" >> "configs/${CLIENT_NAME}.conf"
+```
+
+TOs
+```
+AllowedIPs = "${pivpnNET}/24" >> "configs/${CLIENT_NAME}.conf"
+```
+
+This will only forward ATAK/FTS traffic to the VPN. All other internet traffic will not be filtered.
 
 
+Then to add clients use
+```
+pivpn -a
+```
+
+
+$ UFW
+Once Wireguard is installed and you setup clients you will have to modify a few settings with FTS, FTS-UI & your firewall.
+
+
+Your FTS/FTS-UI Ip's will have to point to the default wg0 IP address and you will have to setup the firewall rules to allow wg0 to access the specific ports that FTS, FTS-UI, and node-red/webmap are utilizing. (Instructions to come)
+
+
+
+Fail2Ban is also reccommended. 
