@@ -326,8 +326,105 @@ $ UFW
 Once Wireguard is installed and you setup clients you will have to modify a few settings with FTS, FTS-UI & your firewall.
 
 
-Your FTS/FTS-UI Ip's will have to point to the default wg0 IP address and you will have to setup the firewall rules to allow wg0 to access the specific ports that FTS, FTS-UI, and node-red/webmap are utilizing. (Instructions to come)
+Your FTS/FTS-UI Ip's will have to point to the default wg0 IP address and you will have to setup the firewall rules to allow wg0 to access the specific ports that FTS, FTS-UI, and node-red/webmap are utilizing.
 
+First you must change the IP's that FTS, & FTS UI are pointing to.
+
+
+FTS Configuration
+```
+sudo nano /opt/FTSConfig.yaml
+```
+Change the following lines
+(`10.6.0.1` - is the default IP for Wireguard)
+```
+FTS_DP_ADDRESS=10.6.0.1
+FTS_USER_ADDRESS=10.6.0.1
+```
+
+FTS-UI Configuration
+
+```
+sudo nano /usr/local/lib/python3.8/dist-packages/FreeTAKServer-UI/config.py
+```
+
+Change the following lines
+(`10.6.0.1` - is the default IP for Wireguard)
+```
+IP = '10.6.0.1'
+APPIP = '10.6.0.1'
+WEBMAPIP = '10.6.0.1'
+```
+
+Now FTS && FTS UI should be running on the Wireguard IP.
+
+Nex you will have to update the firewall to allow your Wireguard IP's to access FTS
+
+UFW should be installed already, but you can install it with:
+```
+sudo apt install ufw
+```
+
+Then you will need to add the following rules:
+
+Port 51820 is the default Wireguard port. Change this if you configured your wireguard differently
+```
+sudo ufw allow 51820
+```
+
+This is the default ssh port. If you do not allow this port access you will not be able to ssh into your server. Also, if you changed your ssh port, update this value.
+```
+sudo ufw allow 22
+```
+
+The next set of rules will be for allowing clients on the wg0 interface to access all the services that FTS, FTS-UI, and FTS-Hub/Webmap uses.
+
+
+FTS-UI
+```
+sudo ufw allow in on wg0 to any port 5000
+```
+
+TCP connections
+```
+sudo ufw allow in on wg0 to any port 8087
+```
+
+SSL connections
+```
+sudo ufw allow in on wg0 to any port 8089
+```
+
+COT Data
+```
+sudo ufw allow in on wg0 to any port 19023
+```
+
+Webmap
+```
+sudo ufw allow in on wg0 to any port 8000
+```
+
+```
+sudo ufw allow in on wg0 to any port 8443
+```
+
+NodeRed
+```
+sudo ufw allow in on wg0 to any port 1880
+```
+
+You can further restrict the access to specicic ports by specifying which IP's can access the port. Instead of allowing full access from the wg0 port
+
+Ex:
+```
+sudo ufw from 10.6.0.2 to any port 8087
+```
+
+Once you have all the rules set type:
+```
+sudo ufw enable
+```
 
 
 Fail2Ban is also reccommended. 
