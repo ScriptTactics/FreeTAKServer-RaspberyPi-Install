@@ -308,7 +308,7 @@ This line:
 AllowedIPS = "0.0.0.0/0, ::0/0" >> "configs/${CLIENT_NAME}.conf"
 ```
 
-TOs
+To
 ```
 AllowedIPs = "${pivpnNET}/24" >> "configs/${CLIENT_NAME}.conf"
 ```
@@ -356,7 +356,7 @@ APPIP = '10.6.0.1'
 WEBMAPIP = '10.6.0.1'
 ```
 
-Now FTS && FTS UI should be running on the Wireguard IP.
+Now FTS & FTS UI should be running on the Wireguard IP.
 
 Nex you will have to update the firewall to allow your Wireguard IP's to access FTS
 
@@ -414,7 +414,7 @@ NodeRed
 sudo ufw allow in on wg0 to any port 1880
 ```
 
-You can further restrict the access to specicic ports by specifying which IP's can access the port. Instead of allowing full access from the wg0 port
+You can further restrict the access to specific ports by specifying which IP's can access the port. Instead of allowing full access from the wg0 port
 
 Ex:
 ```
