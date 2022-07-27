@@ -395,16 +395,21 @@ SSL connections
 sudo ufw allow in on wg0 to any port 8089
 ```
 
+Certificate Enrollment API Port
+```
+sudo ufw allow in on wg0 to any port 8446
+```
+
 COT Data
 ```
 sudo ufw allow in on wg0 to any port 19023
 ```
 
-Webmap
+Insecure Server API Port
 ```
 sudo ufw allow in on wg0 to any port 8000
 ```
-
+Secure Server API Port
 ```
 sudo ufw allow in on wg0 to any port 8443
 ```
