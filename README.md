@@ -423,7 +423,7 @@ You can further restrict the access to specific ports by specifying which IP's c
 
 Ex:
 ```
-sudo ufw from 10.6.0.2 to any port 8087
+sudo ufw allow in on wg0 to any port 8087 from 10.6.0.4
 ```
 
 Once you have all the rules set type:
