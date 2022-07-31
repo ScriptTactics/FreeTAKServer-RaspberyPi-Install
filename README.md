@@ -96,6 +96,8 @@ sudo nano MainConfig.py
 ```
 
 There will be 3 instances of this that you must update
+You can search for them by pressing: `Ctl+w` then typing `ConnectionMessage` then press enter. 
+After you update the first one repeat the process. Press `ctl+w` and then enter (you do not have to type in `ConnectionMessage` again)
 ```
 ConnectionMessage = None
 ```
@@ -118,7 +120,7 @@ Edit the following values:
 IP = 'Your IP'
 ```
 ```
-APPIP = 'Your IP
+APPIP = 'Your IP'
 ```
 ```
 WEBMAPIP = 'Your IP'
