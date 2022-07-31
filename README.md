@@ -84,29 +84,6 @@ Type:
 ```
 sudo python3 -m FreeTAKServer.controllers.services.FTS 
 ```
-A configuration wizard will prompt you for the following values.
-
-```
-1.)would you like to use a yaml config file, 
- if yes you will be prompted for further configuration options [yes]: yes
-
-2.) where would you like to save the yaml config [/opt/FTSConfig.yaml]:
-
-3.) enter ip [Your IP]: 
-
-4.) **enter the preferred database path [/opt/FTSDataBase.db]: **
-/opt/FTSDataBase.db
-
-5.) enter the preferred main_path [/usr/local/lib/python3.8/dist-packages/FreeTAKServer]:
-
-6.) enter the preferred log file path [/usr/local/lib/python3.8/dist-packages/FreeTAKServer/Logs]: 
-
-```
-
-- Step 1: Enter yes
-- Step 2: Hit enter
-- Step 3: You IP will automatically be detected. Update this if you please
-- Step 3-6: You can leave as default
 
 Also, if you do not want the welcome message everytime you connect to FTS, update ConnectionMessage in MainConfig.py file.
 
