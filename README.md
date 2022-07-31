@@ -64,7 +64,7 @@ Next install python libraries
 sudo apt install python3-dev python3-setuptools build-essential python3-gevent python3-lxml libcairo2-dev
 ```
 ```
-sudo pip3 -m install wheel pycairo
+sudo pip3 install wheel pycairo
 ```
 
 Once you have the dependencies installed you can install FreeTAKServer
